@@ -72,5 +72,9 @@ public class IOCTest {
     public void testImport() {
         ApplicationContext context = new AnnotationConfigApplicationContext( MainConfig05.class );
         printBeans( context );
+        Object colorFactoryBean = context.getBean( "colorFactoryBean" );
+        Object colorFactoryBeanFactory = context.getBean( "&colorFactoryBean" );
+        System.out.println( "colorFactoryBean的类型：" + colorFactoryBean.getClass() );
+        System.out.println( "colorFactoryBeanFactory的类型：" + colorFactoryBeanFactory.getClass() );
     }
 }

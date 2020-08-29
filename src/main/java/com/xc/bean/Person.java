@@ -1,12 +1,28 @@
 package com.xc.bean;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class Person {
+    //    @Value( "lisi" )
     private String name;
+    //    @Value( "29" )
     private Integer age;
+
 
     public Person(String name, Integer age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Value("${person.nickName}")
+    private String nickName;
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getName() {
@@ -30,6 +46,7 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", nickName='" + nickName + '\'' +
                 '}';
     }
 }

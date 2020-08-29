@@ -1,6 +1,7 @@
 package com.xc.config;
 
 import com.xc.bean.Color;
+import com.xc.bean.ColorFactoryBean;
 import com.xc.bean.Person;
 import com.xc.bean.Red;
 import com.xc.condition.LinuxCondition;
@@ -34,4 +35,8 @@ public class MainConfig05 {
         return new Person( "linus", 59 );
     }
 
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
+    }
 }
